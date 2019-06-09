@@ -1,0 +1,30 @@
+#include <msp430.h> 
+
+
+/**
+ * main.c
+ */
+int main(void)
+{
+	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
+	
+	P1SEL = BIT1 | BIT2 | BIT4;
+	P1SEL2= BIT1 | BIT2 | BIT4;
+	UCA0CTL1 = UCSWRST;
+	UCA0CTL0 |= BIT7 | BIT5 | BIT1; // MSB, 8-bit, Slave, 4-pin STE active high, Async
+	UCA0CTL1 |= UCSSEL_2;
+
+	P2DIR |= BIT0 | BIT5; // P2.1 y P2.4 como salida
+	P2SEL |= BIT0 | BIT5; // Asociado al Timer_A1
+
+	TA1CCR0 = 1000-1; // Cargamos el periodo PWM
+	TA1CCR1 = 100; // PWM duty cycle, 10% CCR1/(CCR0+1) * 100
+	TA1CCR2 = 500; // PWM duty cycle, 50% CCR2/(CCR0+1) * 100
+	TA1CCTL1 = OUTMOD_7; //Modo7 reset/set
+	TA1CCTL2 = OUTMOD_7; //Modo7 reset/set
+	TA1CTL = TASSEL_2 + MC_1; // Timer SMCLK Modo UP
+
+	_BIS_SR(LPM0_bits + GIE); // Bajo consumo LPM0
+
+	return 0;
+}
