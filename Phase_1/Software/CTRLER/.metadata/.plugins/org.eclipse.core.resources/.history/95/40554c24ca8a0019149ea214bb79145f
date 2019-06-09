@@ -67,6 +67,7 @@ int main(void)
 	rx_flag = 0;
 	P1OUT &= ~BIT7; // Finish the check, turn off the indicator
 
+	int i;
 	while (1){
 	    if (P1OUT & BIT0){
 	        //Auto
@@ -166,9 +167,9 @@ void Auto_Move(unsigned int distance, unsigned int angle0, unsigned int angle1){
     TA1CCR1 = 0;
     TA1CCR2 = 0;
 
-    double angle = angle0 << 7 | (angle1 >> 1);
+    unsigned double angle = angle0 << 7 | (angle1 >> 1);
     unsigned int direction = angle1 & 1;
-    double angle_distance = angle * BODY_RADIUS / WHEEL_LENGTH / 10000;
+    unsigned double angle_distance = angle * BODY_RADIUS / WHEEL_LENGTH / 10000;
     unsigned int COUNT_MAX = (unsigned int)angle_distance;
 
     if (direction) P2OUT = BIT2 | BIT3;

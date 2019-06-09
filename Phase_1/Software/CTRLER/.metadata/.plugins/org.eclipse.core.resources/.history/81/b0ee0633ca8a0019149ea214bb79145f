@@ -67,6 +67,7 @@ int main(void)
 	rx_flag = 0;
 	P1OUT &= ~BIT7; // Finish the check, turn off the indicator
 
+	int i;
 	while (1){
 	    if (P1OUT & BIT0){
 	        //Auto
