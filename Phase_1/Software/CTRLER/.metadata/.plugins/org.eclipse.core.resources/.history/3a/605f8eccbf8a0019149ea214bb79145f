@@ -3,19 +3,14 @@
 #define MIDx 128
 #define MIDy 128
 
-#define PI 3.141592654f
-#define BODY_RADIUS 50  // mm
-#define WHEEL_RADIUS 60 // mm
-#define WHEEL_LENGTH 2*WHEEL_RADIUS*PI // mm
-
 unsigned char rx_data;
 volatile unsigned int rx_flag = 0;
 
 volatile int COUNTL = 0;
 volatile int COUNTR = 0;
+int COUNT_MAX = 100;
 
-void Move(unsigned int x, unsigned int y);
-void Auto_Move(unsigned int distance, unsigned int angle0, unsigned int angle1);
+void Move(int x, int y);
 void SPI_send(unsigned char data);
 void clear_count(void);
 
@@ -25,7 +20,7 @@ void clear_count(void);
 int main(void)
 {
     unsigned int x, y;
-    unsigned int distance, angle0, angle1;
+    unsigned int distance[3], num_of_packet;
 	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
 	
 	/* Motor DIR */
@@ -71,47 +66,30 @@ int main(void)
 	while (1){
 	    if (P1OUT & BIT0){
 	        //Auto
-	        // Stop moving
-	        P2OUT = 0;
-	        TA1CCR1 = 0;
-	        TA1CCR2 = 0;
 	        while (!rx_flag);
+	        num_of_packet = rx_data;
+	        P1OUT &= ~BIT7;
+	        SPI_send(1<<8|0);
 	        rx_flag = 0;
-	        P1OUT &= ~BIT7;
-	        SPI_send(0b100);
-
-	        while (!rx_flag);
-	        distance = rx_data;
-	        rx_flag == 0;
-	        P1OUT &= ~BIT7;
-	        SPI_send(0b101);
-
-	        while (!rx_flag);
-	        angle0 = rx_data;
-	        rx_flag == 0;
-	        P1OUT &= ~BIT7;
-	        SPI_send(0b110);
-
-	        while (!rx_flag);
-	        angle1 = rx_data;
-	        rx_flag == 0;
-	        P1OUT &= ~BIT7;
-	        Auto_Move(distance, angle0, angle1);
-	        SPI_send(0b111);
+	        for (i = 0; i < num_of_packet; i++){
+	            while (!rx_flag);
+	            distance[i] = rx_data;
+	            P1OUT &= ~BIT7;
+	            SPI_send(1<<8|(i+1));
+	            rx_flag = 0;
+	        }
 	    }
 	    else {
 	        //Controller
 	        while (!rx_flag);
-	        rx_flag = 0;
 	        SPI_send(0b000);
 	        P1OUT &= ~BIT7;
-
+	        rx_flag = 0;
 	        while (!rx_flag);
 	        x = rx_data+1;
-	        rx_flag = 0;
 	        SPI_send(0b001);
 	        P1OUT &= ~BIT7;
-
+	        rx_flag = 0;
 	        while (!rx_flag);
 	        y = rx_data+1;
 	        P1OUT &= ~BIT7;
@@ -158,43 +136,6 @@ void Move(int x, int y){
 
     TA1CCR1 = tempL;
     TA1CCR2 = tempR;
-}
-
-void Auto_Move(unsigned int distance, unsigned int angle0, unsigned int angle1){
-    //what?
-    // Stop moving
-    P2OUT = 0;
-    TA1CCR1 = 0;
-    TA1CCR2 = 0;
-
-    unsigned double angle = angle0 << 7 | (angle1 >> 1);
-    unsigned int direction = angle1 & 1;
-    unsigned double angle_distance = angle * BODY_RADIUS / WHEEL_LENGTH / 10000;
-    unsigned int COUNT_MAX = (unsigned int)angle_distance;
-
-    if (direction) P2OUT = BIT2 | BIT3;
-    else P2OUT = BIT0 | BIT4;
-
-    clear_count();
-    while (COUNTL <= COUNT_MAX){
-        TA1CCR1 = 300;
-        TA1CCR2 = 300;
-    }
-    P2OUT = 0;
-    TA1CCR1 = 0;
-    TA1CCR2 = 0;
-
-    // Move Forward within a specified distance
-    COUNT_MAX = (unsigned int)(distance / WHEEL_LENGTH);
-    P2OUT = BIT2 | BIT4;
-    clear_count();
-    while (COUNTR <= COUNT_MAX){
-        TA1CCR1 = 500;
-        TA2CCR2 = 500;
-    }
-    P2OUT = 0;
-    TA1CCR1 = 0;
-    TA1CCR2 = 0;
 }
 
 void SPI_send(unsigned char data)
