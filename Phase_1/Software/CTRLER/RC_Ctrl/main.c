@@ -1,5 +1,7 @@
 #include <msp430.h> 
 
+#define STARTING_SEQ 0b10100101
+
 #define MIDx 128
 #define MIDy 128
 
@@ -7,6 +9,7 @@
 #define BODY_RADIUS 50  // mm
 #define WHEEL_RADIUS 60 // mm
 #define WHEEL_LENGTH 2*WHEEL_RADIUS*PI // mm
+#define GEAR_RATIO 44   // :1
 
 unsigned char rx_data;
 volatile unsigned int rx_flag = 0;
@@ -74,7 +77,10 @@ int main(void)
 	        P2OUT = 0;
 	        TA1CCR1 = 0;
 	        TA1CCR2 = 0;
-	        while (!rx_flag);
+	        while (1){
+	            if (rx_flag && rx_data == STARTING_SEQ)
+	                break;
+	        }
 	        rx_flag = 0;
 	        P1OUT &= ~BIT7;
 	        SPI_send(0b100);
@@ -100,7 +106,10 @@ int main(void)
 	    }
 	    else {
 	        //Controller
-	        while (!rx_flag);
+	        while (1){
+	            if (rx_flag && rx_data == STARTING_SEQ)
+	            break;
+	        }
 	        rx_flag = 0;
 	        SPI_send(0b000);
 	        P1OUT &= ~BIT7;
@@ -168,7 +177,7 @@ void Auto_Move(unsigned int distance, unsigned int angle0, unsigned int angle1){
 
     double angle = angle0 << 7 | (angle1 >> 1);
     unsigned int direction = angle1 & 1;
-    double angle_distance = angle * BODY_RADIUS / WHEEL_LENGTH / 10000;
+    double angle_distance = angle * BODY_RADIUS * GEAR_RATIO / WHEEL_LENGTH / 10000;
     unsigned int COUNT_MAX = (unsigned int)angle_distance;
 
     if (direction) P2OUT = BIT2 | BIT3;
@@ -184,7 +193,8 @@ void Auto_Move(unsigned int distance, unsigned int angle0, unsigned int angle1){
     TA1CCR2 = 0;
 
     // Move Forward within a specified distance
-    COUNT_MAX = (unsigned int)(distance / WHEEL_LENGTH);
+    angle_distance = distance * GEAR_RATIO / WHEEL_LENGTH;
+    COUNT_MAX = (unsigned int)angle_distance;
     P2OUT = BIT2 | BIT4;
     clear_count();
     while (COUNTR <= COUNT_MAX){
@@ -198,12 +208,8 @@ void Auto_Move(unsigned int distance, unsigned int angle0, unsigned int angle1){
 
 void SPI_send(unsigned char data)
 {
-    P1OUT &= ~BIT5;                                                                // Ziehe CS auf Low, Frame startet
-
     UCA0TXBUF = data;                                                              // Sende Wert
     while(UCA0STAT & UCBUSY);                                                      // Warte bis Wert gesendet wurd, Alternativ: while (!(IFG2 & UCA0TXIFG));
-
-    P1OUT |= BIT5;                                                                 // Ziehe CS wieder auf High, Frame beendet
 }
 
 void clear_count(void){
