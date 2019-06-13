@@ -1,4 +1,5 @@
-#include <msp430.h> 
+#include <msp430.h>
+#include <stdint.h>
 
 #define STARTING_SEQ 0b10100101
 
@@ -11,15 +12,15 @@
 #define WHEEL_LENGTH 2*WHEEL_RADIUS*PI // mm
 #define GEAR_RATIO 44   // :1
 
-unsigned char rx_data;
-volatile unsigned int rx_flag = 0;
+uint8_t rx_data;
+volatile uint8_t rx_flag = 0;
 
-volatile int COUNTL = 0;
-volatile int COUNTR = 0;
+volatile uint32_t COUNTL = 0;
+volatile uint32_t COUNTR = 0;
 
-void Move(unsigned int x, unsigned int y);
-void Auto_Move(unsigned int distance, unsigned int angle0, unsigned int angle1);
-void SPI_send(unsigned char data);
+void Move(uint16_t x, uint16_t y);
+void Auto_Move(uint16_t distance, uint16_t angle0, uint16_t angle1);
+void SPI_send(uint8_t data);
 void clear_count(void);
 
 /**
@@ -27,20 +28,27 @@ void clear_count(void);
  */
 int main(void)
 {
-    unsigned int x, y;
-    unsigned int distance, angle0, angle1;
+    uint16_t x, y;
+    uint16_t distance, angle0, angle1;
 	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
 	
+	/* Configure the Clock
+	 * to run it from DCO @16MHz and SMCLK = DCO / 4 */
+	BCSCTL1 = CALBC1_16MHZ;
+	DCOCTL = CALDCO_16MHZ;
+	BCSCTL2 = DIVS_2 + DIVM_0;
+
 	/* Motor DIR */
 	P2DIR |= BIT0 | BIT2 | BIT3 | BIT4;
 
 	/* SPI */
-	P1DIR = 0;
+	P1DIR &= ~BIT5;
+	P1OUT &= ~BIT5;
 	P1SEL = BIT1 | BIT2 | BIT4 | BIT5; // P1.1,2,4 (P1.5 as SS)
 	P1SEL2= BIT1 | BIT2 | BIT4 | BIT5;
+	UCA0CTL1 = UCSWRST;                         // reset the SPI
+	UCA0CTL0 |= UCCKPL + UCMSB + UCSYNC;      // 3-pin, 8-bit SPI Slave
 	UCA0CTL1 &= ~UCSWRST;
-	UCA0CTL0 |= BIT7 | BIT5 | BIT1; // MSB, 8-bit, Slave, 4-pin STE active high, Async
-	UCA0CTL1 |= UCSSEL_2;
 	IE2 |= UCA0RXIE;
 
 	/* GPIO Interrupt for Sensor feedback */
@@ -59,8 +67,7 @@ int main(void)
 	TA1CCTL2 = OUTMOD_7; //Modo7 reset/set
 	TA1CTL = TASSEL_2 + MC_1; // Timer SMCLK Modo UP
 
-	_BIS_SR(LPM0_bits + GIE); // Bajo consumo LPM0
-	__enable_interrupt();
+	__bis_SR_register(LPM0_bits + GIE); // Bajo consumo LPM0
 
 	/* Master Initial communication check response */
 	P1DIR |= BIT7;  // Warning Indicator
@@ -71,7 +78,7 @@ int main(void)
 	P1OUT &= ~BIT7; // Finish the check, turn off the indicator
 
 	while (1){
-	    if (P1OUT & BIT0){
+	    if (P1IN & BIT0){
 	        //Auto
 	        // Stop moving
 	        P2OUT = 0;
@@ -132,7 +139,7 @@ int main(void)
 	return 0;
 }
 
-void Move(unsigned int x, unsigned int y){
+void Move(uint16_t x, uint16_t y){
     int temp_speed, tempx;
     int tempL, tempR;
     if (y == MIDy){
@@ -168,17 +175,17 @@ void Move(unsigned int x, unsigned int y){
     TA1CCR2 = tempR;
 }
 
-void Auto_Move(unsigned int distance, unsigned int angle0, unsigned int angle1){
+void Auto_Move(uint16_t distance, uint16_t angle0, uint16_t angle1){
     //what?
     // Stop moving
     P2OUT = 0;
     TA1CCR1 = 0;
     TA1CCR2 = 0;
 
-    double angle = angle0 << 7 | (angle1 >> 1);
-    unsigned int direction = angle1 & 1;
-    double angle_distance = angle * BODY_RADIUS * GEAR_RATIO / WHEEL_LENGTH / 10000;
-    unsigned int COUNT_MAX = (unsigned int)angle_distance;
+    uint32_t angle = angle0 << 7 | (angle1 >> 1);
+    uint16_t direction = angle1 & 1;
+    double angle_distance = angle * BODY_RADIUS * GEAR_RATIO / WHEEL_LENGTH / 10000.0;
+    uint16_t COUNT_MAX = (uint16_t)angle_distance;
 
     if (direction) P2OUT = BIT2 | BIT3;
     else P2OUT = BIT0 | BIT4;
@@ -194,7 +201,7 @@ void Auto_Move(unsigned int distance, unsigned int angle0, unsigned int angle1){
 
     // Move Forward within a specified distance
     angle_distance = distance * GEAR_RATIO / WHEEL_LENGTH;
-    COUNT_MAX = (unsigned int)angle_distance;
+    COUNT_MAX = (uint16_t)angle_distance;
     P2OUT = BIT2 | BIT4;
     clear_count();
     while (COUNTR <= COUNT_MAX){
@@ -206,10 +213,10 @@ void Auto_Move(unsigned int distance, unsigned int angle0, unsigned int angle1){
     TA1CCR2 = 0;
 }
 
-void SPI_send(unsigned char data)
+void SPI_send(uint8_t data)
 {
+    while (!(IFG2 & UCA0TXIFG));              // USCI_A0 TX buffer ready?
     UCA0TXBUF = data;                                                              // Sende Wert
-    while(UCA0STAT & UCBUSY);                                                      // Warte bis Wert gesendet wurd, Alternativ: while (!(IFG2 & UCA0TXIFG));
 }
 
 void clear_count(void){
@@ -232,7 +239,7 @@ __interrupt void Sensor_INT_ISR(void){
 #pragma vector=USCIAB0RX_VECTOR
 __interrupt void SPI_RX_ISR(void){
     while(UCA0STAT & UCBUSY);
-    while (!(IFG2 & UCA0RXIFG));                        // USCI_A0 TX buffer fertig?
+    //while (!(IFG2 & UCA0RXIFG));                        // USCI_A0 TX buffer fertig?
     rx_data = UCA0RXBUF;
     P1OUT |= BIT7;
     rx_flag = 1;
