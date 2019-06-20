@@ -59,6 +59,7 @@ int main(void)
 	init_PWM();
 
 	__bis_SR_register(LPM0_bits + GIE);       // Enter LPM4, enable interrupts
+//	__bis_SR_register(GIE);
 	__no_operation();
 
 	return 0;
@@ -216,7 +217,7 @@ __interrupt void Sensor_INT_ISR(void){
 __interrupt void SPI_RX_ISR(void){
     if (IFG2 & UCA0RXIFG){
         rx_data = UCA0RXBUF;
-        if (P1IN && BIT5){
+        if (P1IN & BIT5){
             switch (State){
                 case (SELFCHECK):
                     P1OUT |= BIT7;  // Turn on Indicator

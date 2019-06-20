@@ -3,7 +3,7 @@
 
 #define STARTING_SEQ 0b10100101
 
-void SPI_send(uint8_t data);
+void SPI_send(unsigned char data);
 void judge_wait(uint8_t judge, uint8_t sent);
 void send_manual_data(uint8_t X, uint8_t Y);
 void send_auto_data(uint8_t distance, double rad_angle, uint8_t direction);
@@ -42,7 +42,8 @@ int main(void)
     P1OUT &= ~(BIT0 | BIT7);
     P1OUT |= BIT7;
 
-    __bis_SR_register(LPM0_bits + GIE);
+//    __bis_SR_register(LPM0_bits + GIE);
+    __bis_SR_register(GIE);
 
     // Self-Check
     SPI_send(0xFF);
@@ -59,16 +60,19 @@ int main(void)
 }
 
 
-void SPI_send(uint8_t data)
+void SPI_send(unsigned char data)
 {
-    while (!(IFG2 & UCA0TXIFG));              // USCI_A0 TX buffer ready?
     UCA0TXBUF = data;                                                              // Sende Wert
+    while (!(IFG2 & UCA0TXIFG));              // USCI_A0 TX buffer ready?
+    P1OUT &= ~BIT7;
+//    UCA0TXBUF = data;                                                              // Sende Wert
 }
 
 void judge_wait(uint8_t judge, uint8_t sent){
     while (1){
         if (rx_flag){
             P1OUT |= BIT7;
+//            P1OUT &= ~BIT7;
             if (rx_data == judge)
                 break;
             else
