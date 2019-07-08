@@ -1101,3 +1101,152 @@ Finished building target: "RC_Ctrl_d.out"
  
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project Demo_Controller ****
+
+"D:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="D:/ti/ccs901/ccs/ccs_base/msp430/include" --include_path="E:/Personal_Projects/Jumping_Robot/Phase_1/Software/CTRLER/Demo_Controller" --include_path="D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 69: warning #112-D: statement is unreachable
+"../main.c", line 83: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../main.c", line 108: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../main.c", line 106 (col. 6): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 108 (col. 12): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../main.c"
+ 
+Building target: "Demo_Controller.out"
+Invoking: MSP430 Linker
+"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"Demo_Controller.map" --heap_size=80 --stack_size=80 -i"D:/ti/ccs901/ccs/ccs_base/msp430/include" -i"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/lib" -i"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Demo_Controller_linkInfo.xml" --use_hw_mpy=none --rom_model -o "Demo_Controller.out" "./main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Demo_Controller.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Demo_Controller ****
+
+"D:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="D:/ti/ccs901/ccs/ccs_base/msp430/include" --include_path="E:/Personal_Projects/Jumping_Robot/Phase_1/Software/CTRLER/Demo_Controller" --include_path="D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 69: warning #112-D: statement is unreachable
+"../main.c", line 83: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../main.c", line 108: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../main.c", line 106 (col. 6): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 108 (col. 12): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../main.c"
+ 
+Building target: "Demo_Controller.out"
+Invoking: MSP430 Linker
+"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"Demo_Controller.map" --heap_size=80 --stack_size=80 -i"D:/ti/ccs901/ccs/ccs_base/msp430/include" -i"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/lib" -i"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Demo_Controller_linkInfo.xml" --use_hw_mpy=none --rom_model -o "Demo_Controller.out" "./main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Demo_Controller.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Demo_Controller ****
+
+"D:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="D:/ti/ccs901/ccs/ccs_base/msp430/include" --include_path="E:/Personal_Projects/Jumping_Robot/Phase_1/Software/CTRLER/Demo_Controller" --include_path="D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 68: warning #112-D: statement is unreachable
+"../main.c", line 82: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../main.c", line 107: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../main.c", line 105 (col. 6): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 107 (col. 12): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../main.c"
+ 
+Building target: "Demo_Controller.out"
+Invoking: MSP430 Linker
+"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"Demo_Controller.map" --heap_size=80 --stack_size=80 -i"D:/ti/ccs901/ccs/ccs_base/msp430/include" -i"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/lib" -i"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Demo_Controller_linkInfo.xml" --use_hw_mpy=none --rom_model -o "Demo_Controller.out" "./main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Demo_Controller.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Demo_Controller ****
+
+"D:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="D:/ti/ccs901/ccs/ccs_base/msp430/include" --include_path="E:/Personal_Projects/Jumping_Robot/Phase_1/Software/CTRLER/Demo_Controller" --include_path="D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 70: warning #112-D: statement is unreachable
+"../main.c", line 84: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../main.c", line 109: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../main.c", line 107 (col. 6): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 109 (col. 12): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../main.c"
+ 
+Building target: "Demo_Controller.out"
+Invoking: MSP430 Linker
+"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"Demo_Controller.map" --heap_size=80 --stack_size=80 -i"D:/ti/ccs901/ccs/ccs_base/msp430/include" -i"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/lib" -i"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Demo_Controller_linkInfo.xml" --use_hw_mpy=none --rom_model -o "Demo_Controller.out" "./main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Demo_Controller.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Demo_Controller ****
+
+"D:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'Demo_Controller.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Demo_Controller ****
+
+"D:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'Demo_Controller.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Demo_Controller ****
+
+"D:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="D:/ti/ccs901/ccs/ccs_base/msp430/include" --include_path="E:/Personal_Projects/Jumping_Robot/Phase_1/Software/CTRLER/Demo_Controller" --include_path="D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 70: warning #112-D: statement is unreachable
+"../main.c", line 84: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../main.c", line 109: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../main.c", line 107 (col. 6): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 109 (col. 12): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../main.c"
+ 
+Building target: "Demo_Controller.out"
+Invoking: MSP430 Linker
+"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"Demo_Controller.map" --heap_size=80 --stack_size=80 -i"D:/ti/ccs901/ccs/ccs_base/msp430/include" -i"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/lib" -i"D:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.2.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Demo_Controller_linkInfo.xml" --use_hw_mpy=none --rom_model -o "Demo_Controller.out" "./main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Demo_Controller.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Demo_Controller ****
+
+"D:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'Demo_Controller.out' is up to date.
+
+**** Build Finished ****
