@@ -1,0 +1,142 @@
+[
+  {
+    "text": "GUI Composer",
+    "type": "folder",
+    "numChildren": 11,
+    "numChildrenLocal": 0,
+    "children": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Utilities&package=com.ti.SIMPLELINK_CC13X0_SDK__3.20.00.23::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.20.00.68::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__3.20.00.21::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.20.00.06::com.ti.SIMPLELINK_MSP432E4_SDK__3.20.00.10::com.ti.SIMPLELINK_CC32XX_SDK__3.20.00.06::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__3.20.00.24::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.40.00.00::com.ti.AZURE_CC32XX__3.20.00.02::com.ti.AZURE_MSP432E4__3.20.00.02::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.6.2::com.ti.mmwave_automotive_toolbox__2.5.0::c2000ware_software_package__2.00.00.02::digital_power_c2000ware_sdk_software_package__2.00.01.00::motor_control_c2000ware_sdk_software_package__2.00.00.00::powerSUITE_software_package__2.05.01.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.6::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.25.0::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21::com.ti.SIMPLELINK_BLE_PLUGIN_AZURE_GATEWAY_EXAMPLE_PACK__3.20.00.22",
+    "overviewImage": "tirex-product-tree/sdto_utilities_1_00_00_16/.metadata/.tirex/img/gc_tile_hover.svg",
+    "overviewDescription": "Use GUI Composer v2 to easily create custom HTML GUIs that can interact with the programs running on your target device. A wide variety of different web components are provided that allow you to control the target device and display data sent from the target device. GUI Composer is Ideal for creating GUI front-ends for IoT devices and Launchpads that can be accessed via the Web from a smart phone, tablet or computer.",
+    "packageOrder": 314
+  },
+  {
+    "text": "PinMux",
+    "type": "folder",
+    "numChildren": 3,
+    "numChildrenLocal": 0,
+    "children": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Utilities&package=com.ti.SIMPLELINK_CC13X0_SDK__3.20.00.23::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.20.00.68::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__3.20.00.21::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.20.00.06::com.ti.SIMPLELINK_MSP432E4_SDK__3.20.00.10::com.ti.SIMPLELINK_CC32XX_SDK__3.20.00.06::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__3.20.00.24::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.40.00.00::com.ti.AZURE_CC32XX__3.20.00.02::com.ti.AZURE_MSP432E4__3.20.00.02::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.6.2::com.ti.mmwave_automotive_toolbox__2.5.0::c2000ware_software_package__2.00.00.02::digital_power_c2000ware_sdk_software_package__2.00.01.00::motor_control_c2000ware_sdk_software_package__2.00.00.00::powerSUITE_software_package__2.05.01.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.6::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.25.0::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21::com.ti.SIMPLELINK_BLE_PLUGIN_AZURE_GATEWAY_EXAMPLE_PACK__3.20.00.22",
+    "overviewImage": "tirex-product-tree/sdto_utilities_1_00_00_16/.metadata/.tirex/img/pinmux_tile_hover.svg",
+    "overviewDescription": "The Pin MUX Utility is a software tool which provides a Graphical User Interface for configuring pin multiplexing settings, resolving conflicts and specifying I/O cell characteristics for TI MPUs. Results are output as C header/code files that can be imported into software development kits (SDKs) or used to configure customer's custom software. Version 4 of the Pin Mux utility adds the capability of automatically selecting a mux configuration that satisfies the entered requirements.",
+    "packageOrder": 314
+  },
+  {
+    "text": "UniFlash",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 0,
+    "children": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Utilities&package=com.ti.SIMPLELINK_CC13X0_SDK__3.20.00.23::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.20.00.68::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__3.20.00.21::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.20.00.06::com.ti.SIMPLELINK_MSP432E4_SDK__3.20.00.10::com.ti.SIMPLELINK_CC32XX_SDK__3.20.00.06::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__3.20.00.24::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.40.00.00::com.ti.AZURE_CC32XX__3.20.00.02::com.ti.AZURE_MSP432E4__3.20.00.02::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.6.2::com.ti.mmwave_automotive_toolbox__2.5.0::c2000ware_software_package__2.00.00.02::digital_power_c2000ware_sdk_software_package__2.00.01.00::motor_control_c2000ware_sdk_software_package__2.00.00.00::powerSUITE_software_package__2.05.01.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.6::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.25.0::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21::com.ti.SIMPLELINK_BLE_PLUGIN_AZURE_GATEWAY_EXAMPLE_PACK__3.20.00.22",
+    "overviewImage": "tirex-product-tree/sdto_utilities_1_00_00_16/.metadata/.tirex/img/uniflash_tile_hover.svg",
+    "overviewDescription": "CCS Uniflash is a standalone tool used to program on-chip flash memory on TI MCUs and on-board flash memory for Sitara processors. Uniflash has a GUI, command line, and scripting interface.",
+    "packageOrder": 314
+  },
+  {
+    "text": "MSP Flasher",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 0,
+    "children": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Utilities&package=com.ti.SIMPLELINK_CC13X0_SDK__3.20.00.23::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.20.00.68::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__3.20.00.21::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.20.00.06::com.ti.SIMPLELINK_MSP432E4_SDK__3.20.00.10::com.ti.SIMPLELINK_CC32XX_SDK__3.20.00.06::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__3.20.00.24::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.40.00.00::com.ti.AZURE_CC32XX__3.20.00.02::com.ti.AZURE_MSP432E4__3.20.00.02::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.6.2::com.ti.mmwave_automotive_toolbox__2.5.0::c2000ware_software_package__2.00.00.02::digital_power_c2000ware_sdk_software_package__2.00.01.00::motor_control_c2000ware_sdk_software_package__2.00.00.00::powerSUITE_software_package__2.05.01.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.6::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.25.0::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21::com.ti.SIMPLELINK_BLE_PLUGIN_AZURE_GATEWAY_EXAMPLE_PACK__3.20.00.22",
+    "overviewImage": "tirex-product-tree/simplelink-devtools/.metadata/.tirex/img/msp430-flasher_msp430-flasher.jpg",
+    "overviewDescription": "MSP Flasher is an open-source, shell-based interface for programming any MSP device through a MSP Debug Stack and provides the most common functions on the command line. MSP Flasher can be used to download binary files (.txt/.hex) directly to the MSP memory without the need of an IDE like CCS or IAR. It can also be used to extract firmware directly from a device and lock JTAG access permanently.",
+    "packageOrder": 314
+  },
+  {
+    "text": "Replicator for MSP430",
+    "type": "folder",
+    "numChildren": 3,
+    "numChildrenLocal": 0,
+    "children": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Utilities&package=com.ti.SIMPLELINK_CC13X0_SDK__3.20.00.23::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.20.00.68::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__3.20.00.21::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.20.00.06::com.ti.SIMPLELINK_MSP432E4_SDK__3.20.00.10::com.ti.SIMPLELINK_CC32XX_SDK__3.20.00.06::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__3.20.00.24::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.40.00.00::com.ti.AZURE_CC32XX__3.20.00.02::com.ti.AZURE_MSP432E4__3.20.00.02::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.6.2::com.ti.mmwave_automotive_toolbox__2.5.0::c2000ware_software_package__2.00.00.02::digital_power_c2000ware_sdk_software_package__2.00.01.00::motor_control_c2000ware_sdk_software_package__2.00.00.00::powerSUITE_software_package__2.05.01.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.6::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.25.0::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21::com.ti.SIMPLELINK_BLE_PLUGIN_AZURE_GATEWAY_EXAMPLE_PACK__3.20.00.22",
+    "overviewImage": "tirex-product-tree/simplelink-devtools/.metadata/.tirex/img/rep430f.jpg",
+    "overviewDescription": "The Replicator for MSP430 microcontrollers based on TI's MSP430 Memory Programming User's Guides contains a MSP430F5437 MCU with 256 kB of flash memory. Hardware allows setting Vcc from 2.1V to 3.6V. It can be supplied from an external power supply or from the target device. The hardware supports JTAG, SBW and the BSL interface with capability to blow the security fuse. In addition it also can be used as an evaluation board for the MSP430F5437 MCU.",
+    "packageOrder": 314
+  },
+  {
+    "text": "Bootloader (BSL) for MSP",
+    "type": "folder",
+    "numChildren": 1,
+    "numChildrenLocal": 0,
+    "children": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Utilities&package=com.ti.SIMPLELINK_CC13X0_SDK__3.20.00.23::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.20.00.68::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__3.20.00.21::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.20.00.06::com.ti.SIMPLELINK_MSP432E4_SDK__3.20.00.10::com.ti.SIMPLELINK_CC32XX_SDK__3.20.00.06::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__3.20.00.24::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.40.00.00::com.ti.AZURE_CC32XX__3.20.00.02::com.ti.AZURE_MSP432E4__3.20.00.02::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.6.2::com.ti.mmwave_automotive_toolbox__2.5.0::c2000ware_software_package__2.00.00.02::digital_power_c2000ware_sdk_software_package__2.00.01.00::motor_control_c2000ware_sdk_software_package__2.00.00.00::powerSUITE_software_package__2.05.01.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.6::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.25.0::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21::com.ti.SIMPLELINK_BLE_PLUGIN_AZURE_GATEWAY_EXAMPLE_PACK__3.20.00.22",
+    "overviewImage": "tirex-product-tree/simplelink-devtools/.metadata/.tirex/img/mspbsl_msp-bsl_programmer_front.jpg",
+    "overviewDescription": "The Bootloader (BSL, formerly known as the bootstrap loader) is an application built into MSP low-power microcontrollers. It enables the user to communicate with the device to read from and write to its memory. This feature is primarily used for programming the device, during prototyping, final production, and in service. Both the programmable memory (Flash memory or FRAM) and the data memory (RAM) can be modified as required. Different BSLs offer different peripherals to communicate with, e.g. UART, I2C, SPI, or USB.",
+    "packageOrder": 314
+  },
+  {
+    "text": "MSP432 Security and Update Tool",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 0,
+    "children": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Utilities&package=com.ti.SIMPLELINK_CC13X0_SDK__3.20.00.23::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.20.00.68::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__3.20.00.21::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.20.00.06::com.ti.SIMPLELINK_MSP432E4_SDK__3.20.00.10::com.ti.SIMPLELINK_CC32XX_SDK__3.20.00.06::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__3.20.00.24::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.40.00.00::com.ti.AZURE_CC32XX__3.20.00.02::com.ti.AZURE_MSP432E4__3.20.00.02::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.6.2::com.ti.mmwave_automotive_toolbox__2.5.0::c2000ware_software_package__2.00.00.02::digital_power_c2000ware_sdk_software_package__2.00.01.00::motor_control_c2000ware_sdk_software_package__2.00.00.00::powerSUITE_software_package__2.05.01.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.6::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.25.0::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21::com.ti.SIMPLELINK_BLE_PLUGIN_AZURE_GATEWAY_EXAMPLE_PACK__3.20.00.22",
+    "overviewImage": "tirex-product-tree/simplelink-devtools/.metadata/.tirex/img/msp432-security-and-update-tool_guiview.jpg",
+    "overviewDescription": "MSP432 Security and Update Tool provides users an easy way to configure the security features found on MSP432™ devices. With both a graphical user interface (GUI), as well as a command-line interface (CLI), this configuration tool outputs a binary firmware image that can be downloaded to the MSP432 MCU to modify/update the device’s security settings.",
+    "packageOrder": 314
+  },
+  {
+    "text": "Sensor Controller Studio",
+    "type": "folder",
+    "numChildren": 4,
+    "numChildrenLocal": 0,
+    "children": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Utilities&package=com.ti.SIMPLELINK_CC13X0_SDK__3.20.00.23::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.20.00.68::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__3.20.00.21::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.20.00.06::com.ti.SIMPLELINK_MSP432E4_SDK__3.20.00.10::com.ti.SIMPLELINK_CC32XX_SDK__3.20.00.06::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__3.20.00.24::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.40.00.00::com.ti.AZURE_CC32XX__3.20.00.02::com.ti.AZURE_MSP432E4__3.20.00.02::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.6.2::com.ti.mmwave_automotive_toolbox__2.5.0::c2000ware_software_package__2.00.00.02::digital_power_c2000ware_sdk_software_package__2.00.01.00::motor_control_c2000ware_sdk_software_package__2.00.00.00::powerSUITE_software_package__2.05.01.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.6::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.25.0::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21::com.ti.SIMPLELINK_BLE_PLUGIN_AZURE_GATEWAY_EXAMPLE_PACK__3.20.00.22",
+    "overviewImage": "tirex-product-tree/simplelink-devtools/.metadata/.tirex/img/sensor-controller-studio-task-testing.png",
+    "overviewDescription": "<p>Sensor Controller Studio is used to write, test and debug code for the CC26xx/CC13xx Sensor Controller, allowing for ultra-low power application design.</p><p>The tool generates a Sensor Controller Interface driver, which is a set of C source files to be compiled into the System CPU (ARM Cortex-M3/M4) application. These source files contain the Sensor Controller firmware image and associated definitions, and generic functions that allow the System CPU application to control the Sensor Controller and exchange data.</p><p>The Sensor Controller is a small CPU core that is highly optimized for low power consumption and efficient peripheral operation. The Sensor Controller is located in the CC26xx/CC13xx auxiliary (AUX) power/clock domain, and can perform simple background tasks autonomously and independently of the System CPU and the MCU domain power state. Such tasks include but are not limited to:<ul><li>Analog sensor polling, using the ADC or comparator</li><li>Digital sensor polling, using SPI, I2C or other protocols</li><li>Capacitive sensing, using current source, comparator and time-to-digital converter (TDC)</li></ul></p><p>The Sensor Controller is user programmable, using a simple programming language with syntax similar to C. This allows for sensor polling and other tasks to be specified as sequential algorithms, rather than static configuration of complex peripheral modules, timers, DMA, register programmable state machines, event routing and so on. The main advantages are:<ul><li>Flexibility</li><li>Dynamic reuse of hardware resources</li><li>Ability to perform simple data processing without need for dedicated hardware</li><li>Observability and debugging options</li></ul></p>",
+    "packageOrder": 314
+  },
+  {
+    "text": "SmartRF Studio",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 0,
+    "children": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Utilities&package=com.ti.SIMPLELINK_CC13X0_SDK__3.20.00.23::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.20.00.68::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__3.20.00.21::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.20.00.06::com.ti.SIMPLELINK_MSP432E4_SDK__3.20.00.10::com.ti.SIMPLELINK_CC32XX_SDK__3.20.00.06::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__3.20.00.24::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.40.00.00::com.ti.AZURE_CC32XX__3.20.00.02::com.ti.AZURE_MSP432E4__3.20.00.02::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.6.2::com.ti.mmwave_automotive_toolbox__2.5.0::c2000ware_software_package__2.00.00.02::digital_power_c2000ware_sdk_software_package__2.00.01.00::motor_control_c2000ware_sdk_software_package__2.00.00.00::powerSUITE_software_package__2.05.01.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.6::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.25.0::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21::com.ti.SIMPLELINK_BLE_PLUGIN_AZURE_GATEWAY_EXAMPLE_PACK__3.20.00.22",
+    "overviewImage": "tirex-product-tree/simplelink-devtools/.metadata/.tirex/img/smartrf-studio-startup-window.png",
+    "overviewDescription": "<p>SmartRF™ Studio is a Windows application that can be used to evaluate and configure Low Power RF devices from Texas Instruments. The application helps designers of RF systems to easily evaluate the radio at an early stage in the design process. It is especially useful for generation of configuration register values and commands, and for practical testing and debugging of the RF system. SmartRF Studio can be used either as a standalone application or together with applicable evaluation boards or debug probes for the RF device.</p><p><strong>Features</strong><ul><li>Link tests. Send and Receive packets between nodes.</li><li>Antenna and radiation tests. Set the radio in continuous wave TX and RX states.</li><li>A set of recommended/typical register settings for all devices.</li><li>Read and write individual RF registers.</li><li>Execute individual commands to control the radio.</li><li>Detailed information about the bit fields for each register or command.</li><li>Save/Load device configuration data from file.</li><li>Exports register settings and command arguments to a user definable format.</li><li>Exports radio configuration code (CC13xx, CC26xx).</li><li>Allows custom GPIO configuration (CC13xx, CC26xx).</li><li>Communication with evaluation boards over USB via the debug probe or evaluation board.</li><li>Up to 32 evaluation boards are supported on a single computer.</li></ul></p>",
+    "packageOrder": 314
+  },
+  {
+    "text": "SmartRF Packet Sniffer 2",
+    "type": "folder",
+    "numChildren": 2,
+    "numChildrenLocal": 0,
+    "children": true,
+    "state": {
+      "opened": false
+    },
+    "url": "/api/resources?path=Development%20Tools/Utilities&package=com.ti.SIMPLELINK_CC13X0_SDK__3.20.00.23::com.ti.SIMPLELINK_CC13X2_26X2_SDK__3.20.00.68::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__3.20.00.21::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__3.20.00.06::com.ti.SIMPLELINK_MSP432E4_SDK__3.20.00.10::com.ti.SIMPLELINK_CC32XX_SDK__3.20.00.06::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__3.20.00.24::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.40.00.00::com.ti.AZURE_CC32XX__3.20.00.02::com.ti.AZURE_MSP432E4__3.20.00.02::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::com.ti.mmwave_industrial_toolbox__3.6.2::com.ti.mmwave_automotive_toolbox__2.5.0::c2000ware_software_package__2.00.00.02::digital_power_c2000ware_sdk_software_package__2.00.01.00::motor_control_c2000ware_sdk_software_package__2.00.00.00::powerSUITE_software_package__2.05.01.00::msp430ware__3.80.07.00::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.6::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.25.0::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::xdctools__3.51.02.21::com.ti.SIMPLELINK_BLE_PLUGIN_AZURE_GATEWAY_EXAMPLE_PACK__3.20.00.22",
+    "overviewImage": "tirex-product-tree/simplelink-devtools/.metadata/.tirex/img/smartrf-packet-sniffer-2-agent.png",
+    "overviewDescription": "<p>SmartRF Packet Sniffer 2 includes software and firmware to capture and display over-the-air packets. The capture device is connected to the PC via USB. SmartRF Packet Sniffer 2 supports the CC13xx and CC26xx family of devices as capture device and uses Wireshark for packet display and filtering.</p><p>SmartRF Packet Sniffer 2 includes the following components:<ul><li>SmartRF Sniffer Agent (PC tool) for configuration and communication with the capture device</li><li>Firmware that enables CC13xx or CC26xx Launchpads to be used as capture device</li><li>Firmware source code</li><li>Dissectors for Wireshark (TI Radio Packet Info, TI BLE Packet Info and IEEE 802.15.4ge dissectors)</li></ul></p><p>The SmartRF Sniffer Agent is used to configure and communicate with the capture device and forwards packets to Wireshark.</p><p>Features:<ul><li>Packet sniffer for IEEE 802.15.4, ZigBee and Thread networks</li><li>Packet sniffer for IEEE 802.15.4ge (TI 15.4 Stack) networks</li><li>Packet sniffer for TI EasyLink protocol</li><li>Packet sniffer for Bluetooth® Low Energy</li></ul></p>",
+    "packageOrder": 314
+  }
+]

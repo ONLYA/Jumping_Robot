@@ -28,7 +28,7 @@ void GPIO_init(void);
 void SPI_init(void);
 void ADC10_init(void);
 
-uint8_t Send_data(uint8_t *data, uint8_t length);
+uint8_t Send_data(volatile uint8_t *data, uint8_t length);
 
 /**
  * main.c
@@ -48,7 +48,7 @@ int main(void)
 	    if (P1IN & CS){
 	        P1OUT |= SS;
 	        while (!SPI_DONE);
-	        Send_data(TX_Buffer, 3);
+	        while(Send_data(TX_Buffer, 3));
 	        SPI_DONE = 0;
 	    }
 	    else {
@@ -59,7 +59,7 @@ int main(void)
 	        TX_Buffer[0] = X;
 	        TX_Buffer[1] = Y;
 
-	        Send_data(TX_Buffer, 2);
+	        while(Send_data(TX_Buffer, 2));
 	    }
 	}
 
@@ -84,8 +84,8 @@ void GPIO_init(void){
 }
 
 void SPI_init(void){
-    P1DIR |= NSEL_PIN;
-    P1OUT |= NSEL_PIN;  // NSEL
+//    P1DIR |= NSEL_PIN;
+//    P1OUT |= NSEL_PIN;  // NSEL
     P1SEL = BIT1 | BIT2 | BIT4; // P1.1, 1.2, 1.4
     P1SEL2= BIT1 | BIT2 | BIT4;
     UCA0CTL1 = UCSWRST;
@@ -105,7 +105,7 @@ void ADC10_init(void){
     ADC10CTL0|= BIT4 | BIT3;            // ADC_ON & ADC10_interrupt
 }
 
-uint8_t Send_data(uint8_t *data, uint8_t length){
+uint8_t Send_data(volatile uint8_t *data, uint8_t length){
     uint8_t i;
     for (i=0; i<length; i++){
         P1OUT |= INT;
@@ -117,6 +117,8 @@ uint8_t Send_data(uint8_t *data, uint8_t length){
     P2OUT = 0;
     __delay_cycles(10);
     P1OUT &= ~INT;
+
+    return 0;
 }
 
 #pragma vector=USCIAB0RX_VECTOR
