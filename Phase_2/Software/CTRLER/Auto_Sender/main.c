@@ -9,16 +9,17 @@
 
 #define MAX_BUFFER_SIZE 10
 #define SS BIT0 // Bit 0 as State Select
-#define INT BIT3// Bit 3 as INT indicate
+#define INT BIT3// Bit 3 as INT indicate *********************** INT/JoystickSW
 #define CS BIT5 // Bit 5 as Chip Select of SPI
 
-uint8_t rx_data;
-volatile uint8_t rx_flag;
+//uint8_t rx_data;
+//volatile uint8_t rx_flag;
 
-uint8_t state = 0;
-uint8_t X, Y;
+//uint8_t state = 0;
+//uint8_t X, Y;
 
-volatile uint8_t TX_Buffer[MAX_BUFFER_SIZE] = {0};
+/*volatile */uint8_t TX_Buffer[MAX_BUFFER_SIZE] = {0};
+/*volatile */uint16_t X_Y[2] = {0}; // {X, Y}
 
 uint8_t SPI_index = 0;  // index for SPI RX
 volatile uint8_t SPI_DONE = 0;   // indicate transaction is done (FLAG)
@@ -53,13 +54,19 @@ int main(void)
 	    }
 	    else {
 	        P1OUT &= ~SS;
-	        ADC10CTL0 |= BIT7 | BIT6;   // Start Conversion on A6 A7
+	        ADC10CTL0 &= ~ENC;  // Start Conversion on A6 A7
+	        while (ADC10CTL1 & ADC10BUSY);  // Wait if ADC10 core is active
+	        ADC10SA = (uint16_t)X_Y;  // Data buffer start
+	        ADC10CTL0 |= ENC + ADC10SC; // Sampling and conversion start
+	        TX_Buffer[0] = X_Y[0];   // 10-bit to 8-bit - X
+	        TX_Buffer[1] = X_Y[1];   // 10-bit to 8-bit - Y
+	        while(Send_data(TX_Buffer, 2));
 	        __bis_SR_register(GIE);     // Enable Global Interrupt for ADC10 on every cycle
 
-	        TX_Buffer[0] = X;
-	        TX_Buffer[1] = Y;
+//	        TX_Buffer[0] = X;
+//	        TX_Buffer[1] = Y;
 
-	        while(Send_data(TX_Buffer, 2));
+//	        while(Send_data(TX_Buffer, 2));
 	    }
 	}
 
@@ -76,8 +83,8 @@ void CLK_init(void){
 }
 
 void GPIO_init(void){
-//    P1IES |= BIT3 | BIT6;  // TO receive NIRQ & INPUT rising edge
-//    P1IFG |= BIT3 | BIT6;  // Rising Edge
+//    P1IES |= BIT3 | BIT6;  // Falling Edge
+//    P1IFG |= BIT3 | BIT6;  // TO receive NIRQ & INPUT rising edge
 //    P1IE |= BIT3 | BIT6;   // Enable Port 1 Interrupt
     P1DIR = SS | INT;   // Set SS and INT output
     P2DIR = 0xFF;   // Set all P2 ports as output
@@ -99,10 +106,11 @@ void SPI_init(void){
 }
 
 void ADC10_init(void){
-    ADC10CTL1 |= BITE | BITD | BITC | BIT2 | BIT1;  // INCH7, Enable Repeated Sequence Conversion
-    ADC10CTL1 &= ~(BITB | BITA);        // SHS = 0
+    ADC10CTL1 |= INCH_7 + CONSEQ_1;     // INCH7, Enable Single Sequence Conversion
+    ADC10CTL0 = ADC10SHT_2 + MSC + ADC10ON + ADC10IE;   // 16xSample&Hold, Multiple sample and conversion, ADCON, Interrupt En
+    ADC10DTC1 = 0x02;                   // 2 conversions
     ADC10AE0 |= BIT7 | BIT6;            // A6 and A7
-    ADC10CTL0|= BIT4 | BIT3;            // ADC_ON & ADC10_interrupt
+//    ADC10CTL0|= BIT4 | BIT3;            // ADC_ON & ADC10_interrupt
 }
 
 uint8_t Send_data(volatile uint8_t *data, uint8_t length){
@@ -139,9 +147,9 @@ __interrupt void SPI_RX_ISR(void){
 
 #pragma vector=ADC10_VECTOR
 __interrupt void ADC10_ISR(void){
-    switch (state){
-    case 0: X = ADC10MEM >> 8; state = 1; break;
-    case 1: Y = ADC10MEM >> 8; state = 0; break;
-    default: state = 0; break;
-    }
+//    switch (state){
+//    case 0: X = ADC10MEM >> 8; state = 1; break;
+//    case 1: Y = ADC10MEM >> 8; state = 0; break;
+//    default: state = 0; break;
+//    }
 }
