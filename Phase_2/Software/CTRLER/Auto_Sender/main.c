@@ -18,8 +18,8 @@
 //uint8_t state = 0;
 //uint8_t X, Y;
 
-/*volatile */uint8_t TX_Buffer[MAX_BUFFER_SIZE] = {0};
-/*volatile */uint16_t X_Y[2] = {0}; // {X, Y}
+volatile uint8_t TX_Buffer[MAX_BUFFER_SIZE] = {0};
+volatile uint16_t X_Y[2] = {0}; // {X, Y}
 
 uint8_t SPI_index = 0;  // index for SPI RX
 volatile uint8_t SPI_DONE = 0;   // indicate transaction is done (FLAG)
@@ -29,6 +29,11 @@ void GPIO_init(void);
 void SPI_init(void);
 void ADC10_init(void);
 
+/*
+ * It reads the Joystick data
+ * Thanks for the help of "Bruce McKenney47378" in ti e2e forum!
+ * */
+void ADC_read();
 uint8_t Send_data(volatile uint8_t *data, uint8_t length);
 
 /**
@@ -53,20 +58,7 @@ int main(void)
 	        SPI_DONE = 0;
 	    }
 	    else {
-	        P1OUT &= ~SS;
-	        ADC10CTL0 &= ~ENC;  // Start Conversion on A6 A7
-	        while (ADC10CTL1 & ADC10BUSY);  // Wait if ADC10 core is active
-	        ADC10SA = (uint16_t)X_Y;  // Data buffer start
-	        ADC10CTL0 |= ENC + ADC10SC; // Sampling and conversion start
-	        TX_Buffer[0] = X_Y[0];   // 10-bit to 8-bit - X
-	        TX_Buffer[1] = X_Y[1];   // 10-bit to 8-bit - Y
-	        while(Send_data(TX_Buffer, 2));
-	        __bis_SR_register(GIE);     // Enable Global Interrupt for ADC10 on every cycle
-
-//	        TX_Buffer[0] = X;
-//	        TX_Buffer[1] = Y;
-
-//	        while(Send_data(TX_Buffer, 2));
+	        ADC_read();
 	    }
 	}
 
@@ -113,6 +105,19 @@ void ADC10_init(void){
 //    ADC10CTL0|= BIT4 | BIT3;            // ADC_ON & ADC10_interrupt
 }
 
+void ADC_read(){
+    P1OUT &= ~SS;
+//    ADC10CTL0 &= ~ENC;  // Start Conversion on A6 A7
+//    while (ADC10CTL1 & ADC10BUSY);  // Wait if ADC10 core is active
+    ADC10SA = (uint16_t)X_Y;  // Data buffer start
+    ADC10CTL0 |= ENC + ADC10SC; // Sampling and conversion start
+    while (ADC10CTL1 & ADC10BUSY);  // Wait if ADC10 core is active
+    TX_Buffer[0] = X_Y[0]>>2;   // 10-bit to 8-bit - X
+    TX_Buffer[1] = X_Y[1]>>2;   // 10-bit to 8-bit - Y
+    while(Send_data(TX_Buffer, 2));
+    __bis_SR_register(GIE);     // Enable Global Interrupt for ADC10 on every cycle
+}
+
 uint8_t Send_data(volatile uint8_t *data, uint8_t length){
     uint8_t i;
     for (i=0; i<length; i++){
@@ -152,4 +157,7 @@ __interrupt void ADC10_ISR(void){
 //    case 1: Y = ADC10MEM >> 8; state = 0; break;
 //    default: state = 0; break;
 //    }
+//    TX_Buffer[0] = X_Y[0];   // 10-bit to 8-bit - X
+//    TX_Buffer[1] = X_Y[1];   // 10-bit to 8-bit - Y
+//    while(Send_data(TX_Buffer, 2));
 }
