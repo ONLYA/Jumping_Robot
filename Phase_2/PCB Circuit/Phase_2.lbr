@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.0">
+<eagle version="9.5.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -2559,44 +2559,28 @@ type 0309, grid 2.5 mm</description>
 <rectangle x1="7.366" y1="-0.254" x2="7.874" y2="0.254" layer="51"/>
 <rectangle x1="9.906" y1="-0.254" x2="10.414" y2="0.254" layer="51"/>
 </package>
-<package name="HDRRAR5W64P254_1X5_1016X736X556B" urn="urn:adsk.eagle:footprint:13425343/1">
+<package name="HDRRAR5W64P254_1X5_1016X736X556B" urn="urn:adsk.eagle:footprint:13425343/1" locally_modified="yes">
 <description>Single-row, 5-pin Receptacle Header (Female) Right Angle, 2.54 mm (0.10 in) col pitch, 7.36 mm insulator length, 10.16 X 7.36 X 5.56 mm body
 &lt;p&gt;Single-row (1X5), 5-pin Receptacle Header (Female) Right Angle package with 2.54 mm (0.10 in) col pitch, 0.64 mm lead width, 3.00 mm tail length and 7.36 mm insulator length with body size 10.16 X 7.36 X 5.56 mm, pin pattern - clockwise from top left&lt;/p&gt;</description>
 <circle x="-1.471" y="0" radius="0.25" width="0" layer="21"/>
-<wire x1="10.16" y1="-8.88" x2="0" y2="-8.88" width="0.12" layer="21"/>
-<wire x1="0" y1="-8.88" x2="0" y2="-1.52" width="0.12" layer="21"/>
-<wire x1="0" y1="-1.52" x2="10.16" y2="-1.52" width="0.12" layer="21"/>
-<wire x1="10.16" y1="-1.52" x2="10.16" y2="-8.88" width="0.12" layer="21"/>
-<wire x1="10.16" y1="-8.88" x2="0" y2="-8.88" width="0.12" layer="51"/>
-<wire x1="0" y1="-8.88" x2="0" y2="-1.52" width="0.12" layer="51"/>
-<wire x1="0" y1="-1.52" x2="10.16" y2="-1.52" width="0.12" layer="51"/>
-<wire x1="10.16" y1="-1.52" x2="10.16" y2="-8.88" width="0.12" layer="51"/>
 <pad name="1" x="0" y="0" drill="1.1051" diameter="1.9339"/>
 <pad name="2" x="2.54" y="0" drill="1.1051" diameter="1.9339"/>
 <pad name="3" x="5.08" y="0" drill="1.1051" diameter="1.9339"/>
 <pad name="4" x="7.62" y="0" drill="1.1051" diameter="1.9339"/>
 <pad name="5" x="10.16" y="0" drill="1.1051" diameter="1.9339"/>
 <text x="0" y="1.602" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-9.515" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
+<text x="0" y="-1.895" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
 </package>
-<package name="HDRRAR4W64P254_1X4_1016X736X556B" urn="urn:adsk.eagle:footprint:13425428/1">
+<package name="HDRRAR4W64P254_1X4_1016X736X556B" urn="urn:adsk.eagle:footprint:13425428/1" locally_modified="yes">
 <description>Single-row, 4-pin Receptacle Header (Female) Right Angle, 2.54 mm (0.10 in) col pitch, 7.36 mm insulator length, 10.16 X 7.36 X 5.56 mm body
 &lt;p&gt;Single-row (1X4), 4-pin Receptacle Header (Female) Right Angle package with 2.54 mm (0.10 in) col pitch, 0.64 mm lead width, 3.00 mm tail length and 7.36 mm insulator length with body size 10.16 X 7.36 X 5.56 mm, pin pattern - clockwise from top left&lt;/p&gt;</description>
 <circle x="-1.3565" y="0" radius="0.25" width="0" layer="21"/>
-<wire x1="8.89" y1="-8.88" x2="-1.27" y2="-8.88" width="0.12" layer="21"/>
-<wire x1="-1.27" y1="-8.88" x2="-1.27" y2="-1.52" width="0.12" layer="21"/>
-<wire x1="-1.27" y1="-1.52" x2="8.89" y2="-1.52" width="0.12" layer="21"/>
-<wire x1="8.89" y1="-1.52" x2="8.89" y2="-8.88" width="0.12" layer="21"/>
-<wire x1="8.89" y1="-8.88" x2="-1.27" y2="-8.88" width="0.12" layer="51"/>
-<wire x1="-1.27" y1="-8.88" x2="-1.27" y2="-1.52" width="0.12" layer="51"/>
-<wire x1="-1.27" y1="-1.52" x2="8.89" y2="-1.52" width="0.12" layer="51"/>
-<wire x1="8.89" y1="-1.52" x2="8.89" y2="-8.88" width="0.12" layer="51"/>
 <pad name="1" x="0" y="0" drill="1.1051" diameter="1.7051"/>
 <pad name="2" x="2.54" y="0" drill="1.1051" diameter="1.7051"/>
 <pad name="3" x="5.08" y="0" drill="1.1051" diameter="1.7051"/>
 <pad name="4" x="7.62" y="0" drill="1.1051" diameter="1.7051"/>
 <text x="0" y="1.4875" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-9.515" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
+<text x="0" y="-1.895" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
 </package>
 <package name="HDRVR2W64P254_1X2_1016X508X254B" urn="urn:adsk.eagle:footprint:13425447/1">
 <description>Single-row, 2-pin Receptacle Header (Female) Straight, 2.54 mm (0.10 in) col pitch, 2.54 mm insulator length, 10.16 X 5.08 X 2.54 mm body

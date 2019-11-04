@@ -5426,6 +5426,7 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="55.88" y1="38.1" x2="121.92" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="38.1" x2="121.92" y2="10.16" width="0.1524" layer="91"/>
 <junction x="55.88" y="38.1"/>
+<label x="-15.24" y="40.64" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

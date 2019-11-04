@@ -107,8 +107,6 @@ void ADC10_init(void){
 
 void ADC_read(){
     P1OUT &= ~SS;
-//    ADC10CTL0 &= ~ENC;  // Start Conversion on A6 A7
-//    while (ADC10CTL1 & ADC10BUSY);  // Wait if ADC10 core is active
     ADC10SA = (uint16_t)X_Y;  // Data buffer start
     ADC10CTL0 |= ENC + ADC10SC; // Sampling and conversion start
     while (ADC10CTL1 & ADC10BUSY);  // Wait if ADC10 core is active
